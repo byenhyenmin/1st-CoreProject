@@ -12,7 +12,7 @@
   </settings>
 	
 	<typeAliases>
-		<typeAlias type="com.smhrd.model.Board" alias="Board" />
+		<typeAlias type="com.smhrd.model.Board" alias="" />
 	</typeAliases>
 	<!-- 2) DB 연결과 관련된 정의를 기술 -->
 	<environments default="development">
