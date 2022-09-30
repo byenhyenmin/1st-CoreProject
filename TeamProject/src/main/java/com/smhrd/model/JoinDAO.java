@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.SqlSessionManager;
 
-public class DAO {
+public class JoinDAO {
 	
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	

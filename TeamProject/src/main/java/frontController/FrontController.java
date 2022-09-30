@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,6 +43,22 @@ public class FrontController extends HttpServlet {
 		
 		Controller con = null;
 		String nextView = null;
+		
+		con = mappings.get(command);
+		nextView = con.execute(request, response);
+		
+		if(nextView.contains("redirect:/")) {
+			// redirect
+			// redirect:/SelectAll.do
+			// split()은 배열을 리턴 --> ["redirect", "SelectAll.do"] 
+			response.sendRedirect(nextView.split(":/")[1]);			
+		}else {
+			// forward (request scope를 그대로 가져갈 수 있음)
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/views/" + nextView + ".jsp");
+			rd.forward(request, response);	
+		}
+		
+		
 		
 	}
 

@@ -1,6 +1,6 @@
 package com.smhrd.model;
 
-public class mastring {
+public class Join {
 
 	private String mem_id;
 	private String mem_pw;
@@ -9,10 +9,6 @@ public class mastring {
 	private String mem_joindate;
 	private String mem_type;
 	private int mem_budget;
-	
-	
-	
-	
 	
 	
 	public String getMem_id() {
