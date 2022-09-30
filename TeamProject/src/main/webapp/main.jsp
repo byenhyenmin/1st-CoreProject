@@ -126,6 +126,7 @@ footer a:hover {
 
 
 </style>
+<script type="text/javascript" src = "https://openapi.map.naver.com/openapi/v3/maps.js?clientId=rrv1szjpt7"></script>
 </head>
 <body>
 
@@ -224,13 +225,13 @@ footer a:hover {
 			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>
-	</div>
+	</div>                  
 
 	<div class="container">
 		<br>
 		<div class="row">
 			<div class="col-sm-6">
-				<div class="map">
+				<div id="map" style="width:100%;height:400px;">
 					<p>네이버 지도 오픈 api</p>
 					<img src="#" class="img-responsive" style="width: 300%;"
 						alt="Image">
@@ -265,5 +266,16 @@ footer a:hover {
 		<p>@ma!-string 추천시스템</p>
 	</footer>
 
+<script>
+	var mapOptions = {
+		    center: new naver.maps.LatLng(37.3595704, 127.105399),
+		    zoom: 10
+		};
+
+	var map = new naver.maps.Map('map', mapOptions);
+		</script>
+		</body>
+		</html>
+</script>
 </body>
 </html>
