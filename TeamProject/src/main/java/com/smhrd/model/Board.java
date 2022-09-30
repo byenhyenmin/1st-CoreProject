@@ -1,4 +1,4 @@
-package som.smhrd.model;
+package com.smhrd.model;
 
 public class Board {
 	// table에 있는 column명이랑 동일해야 mybatis가 찾을 수 있다.

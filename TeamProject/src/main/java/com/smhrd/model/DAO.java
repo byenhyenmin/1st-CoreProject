@@ -1,4 +1,4 @@
-package som.smhrd.model;
+package com.smhrd.model;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;

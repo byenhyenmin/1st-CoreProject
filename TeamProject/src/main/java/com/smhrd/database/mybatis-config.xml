@@ -12,7 +12,7 @@
   </settings>
 	
 	<typeAliases>
-		<typeAlias type="com.smhrd.model.Board" alias="" />
+		<typeAlias type="com.smhrd.model.mastring" alias="mastring" />
 	</typeAliases>
 	<!-- 2) DB 연결과 관련된 정의를 기술 -->
 	<environments default="development">
@@ -35,6 +35,6 @@
 	<!-- 4) sql구문을 가지고 있는 파일과 연결 -->
 	<mappers>
 		<!-- 만약 mapper 파일이 여러개라면 mapper태그 여려개 잡아주기! -->
-		<mapper resource="com/smhrd/database/BoardMapper.xml" />
+		<mapper resource="com/smhrd/database/mastring.xml" />
 	</mappers>
 </configuration>       

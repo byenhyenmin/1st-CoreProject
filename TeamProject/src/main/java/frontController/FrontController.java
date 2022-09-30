@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.FlaskImageCon;
+import com.smhrd.controller.joinCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -21,8 +23,12 @@ public class FrontController extends HttpServlet {
 	
 	public void init(ServletConfig config) throws ServletException {
 		
-		mappings = new HashMap<>();
 		
+		System.out.println("frontcontroll 되니?");
+		
+		
+		mappings = new HashMap<>();
+		mappings.put("/join.do",new joinCon());
 		
 	}
 
