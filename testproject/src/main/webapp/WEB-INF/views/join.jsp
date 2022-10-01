@@ -48,11 +48,11 @@
             <tr>
                
                 <td width="40%">아이디</td>
-                <td><input type="text" name ="userId" id="id" name = "id"></td>
+                <td><input type="text" name ="userId" id="id" ></td>
             </tr>
             <tr >
                 <td width="20%">비밀번호</td>
-                <td><input type="password" name="userPW" id="pw" name = "pw" onchange="check_pw()"></td>
+                <td><input type="password" name="userPW" id="pw" onchange="check_pw()"></td>
             </tr>
             <tr>
                 <td width="20%">비밀번호 확인</td>
@@ -64,7 +64,7 @@
             </tr>
            <tr >
                 <td width="20%">성별</td>
-                <td><select type="radio" name="gender" id="gender">
+                <td><select type="radio" name="gender1" id="gender">
                 <option name ="gender" value="male">남</option> 
                 <option name ="gender" value="female">여</option> 
                 </select></td>
