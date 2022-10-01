@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xml파일이란? (Extensible Markup Language) -->
+<!-- xml파일의 목적은? 서로 다른 주체(파일)들간의 데이터를 주고받는 것을 도와주는 역할 -->
+<!-- 1) xml파일이 어떤 내용을 기술할건지 정의를 잡아주기 -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	    <settings> 
+    <setting name="cacheEnabled" value="false" />
+    <setting name="jdbcTypeForNull" value="NULL" />
+  </settings>
+	
+	<typeAliases>
+		<typeAlias type="com.smhrd.model.Join" alias="Join" />
+	</typeAliases>
+	<!-- 2) DB 연결과 관련된 정의를 기술 -->
+	<environments default="development">
+		<!-- id가 기본값과 연결될 수 있도록 -->
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<!-- 정해진 자원의 양만큼만 -->
+			<dataSource type="POOLED">
+				<!-- 3) DB 정보(user, password, url)를 기술 -->
+				<property name="driver"
+					value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe" />
+				<property name="username" value="cgi_3_0924_2" />
+				<property name="password" value="smhrd2" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- 4) sql구문을 가지고 있는 파일과 연결 -->
+	<mappers>
+		<!-- 만약 mapper 파일이 여러개라면 mapper태그 여려개 잡아주기! -->
+		<mapper resource="com/smhrd/database/JoinMapper.xml" />
+	</mappers>
+</configuration>       
