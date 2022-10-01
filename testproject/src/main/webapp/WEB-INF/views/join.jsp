@@ -65,8 +65,8 @@
            <tr >
                 <td width="20%">성별</td>
                 <td><select type="radio" name="gender1" id="gender">
-                <option name ="gender" value="male">남</option> 
-                <option name ="gender" value="female">여</option> 
+                <option name ="gender" value="M">남</option> 
+                <option name ="gender" value="F">여</option> 
                 </select></td>
                 
             </tr>

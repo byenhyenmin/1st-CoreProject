@@ -22,7 +22,7 @@
 	
 	<insert id="insert" parameterType="join">
 		insert into join(image, title, writer, content, join_num)
-		values(#{image},#{title},#{writer},#{content},join_num.nextval)
+		values(#{image},#{title},#{writer},#{cntent},join_num.nextval)
 		<!-- 중괄호 안에 띄어쓰기x, 구문 끝에 세미콜론x -->
 	</insert>
 	

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.Join;
+import com.smhrd.model.JoinDAO;
 
 public class joinCon implements Controller {
 
@@ -20,16 +21,18 @@ public class joinCon implements Controller {
 		String mem_birthdate = request.getParameter("birth");
 		String mem_gender = request.getParameter("gender1");
 	
-		Join mst = new Join();
-		mst.setMem_id(mem_id);
-		mst.setMem_pw(mem_pw);
-		mst.setMem_birthdate(mem_birthdate);
-		mst.setMem_gender(mem_gender);
+		Join join = new Join();
+		join.setMem_id(mem_id);
+		join.setMem_pw(mem_pw);
+		join.setMem_birthdate(mem_birthdate);
+		join.setMem_gender(mem_gender);
 		
+		JoinDAO dao = new JoinDAO();
+		dao.insert(join);
+	
+		System.out.println(join.getMem_id()+"아이디");
+		System.out.println(join.getMem_birthdate()+"생일");
 		
-		System.out.println(mst.getMem_id()+"아이디");
-		System.out.println(mst.getMem_birthdate()+"생일");
-		System.out.println(mst.getMem_joindate()+"가입날짜");
 		
 		System.out.println("회원가입성공");
 		

@@ -26,13 +26,13 @@ public class JoinDAO {
 		return list;
 	}
 
-	public int insert(Board board) {
+	public int insert(Join join) {
 		int result = 0;
 		// 1. sqlsession 가져오기
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);		
 		
 		// 2. sql구문 실행
-		result =sqlSession.insert("insert", board);
+		result =sqlSession.insert("insert", join);
 		
 		return result;
 	}

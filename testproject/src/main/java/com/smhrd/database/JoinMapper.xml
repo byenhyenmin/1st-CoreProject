@@ -21,8 +21,8 @@
 	     **parameter로 받아온 데이터는 #{필드명} 값을 가져올 수 있다. -->
 	
 	<insert id="insert"  parameterType="Join">
-		insert into mastring(mem_id, mem_pw, mem_birthdate, mem_gender, mem_joindate)
-		values(#{mem_id},#{mem_pw},#{mem_birthdate},#{mem_gender},mem_joindate to date(sysdate)
+		insert into t_member(mem_id, mem_pw, mem_birthdate, mem_gender, mem_joindate, mem_type)
+		values(#{mem_id},#{mem_pw},#{mem_birthdate},#{mem_gender}, SYSDATE,'M')
 		<!-- 중괄호 안에 띄어쓰기x, 구문 끝에 세미콜론x -->
 	</insert>
 	
