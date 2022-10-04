@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.gojoinCon;
 import com.smhrd.controller.joinCon;
+import com.smhrd.controller.main_loginCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -23,14 +24,11 @@ public class FrontController extends HttpServlet {
 	Map<String, Controller> mappings;
 	
 	public void init(ServletConfig config) throws ServletException {
-		
-		
-		System.out.println("frontcontroll 되니?");
-		
-		
+			
 		mappings = new HashMap<>();
 		mappings.put("/join.do",new joinCon());
 		mappings.put("/gojoinCon.do",new gojoinCon());
+		mappings.put("/main_login.do", new main_loginCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

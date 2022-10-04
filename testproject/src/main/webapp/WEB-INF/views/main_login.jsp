@@ -198,7 +198,7 @@ footer a:hover {
 				<img src="assets/images/main-bg.png" alt="Image">
 				<div class="carousel-caption">
 					<h1>
-						<b>남도달밤야시장 오픈</b>
+						<b>(로그인페이지)남도달밤야시장 오픈</b>
 					</h1>
 					<p>드리머스 공연! 버스킹 공연! 풍물놀이! AR체험! 다양한 먹거리!</p>
 				</div>

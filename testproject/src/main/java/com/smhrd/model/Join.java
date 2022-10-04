@@ -8,8 +8,16 @@ public class Join {
 	private String mem_gender;
 	private String mem_joindate;
 	private String mem_type;
-	private int mem_budget;
 	
+	public Join() {
+		
+	}
+
+	public Join(String mem_id, String mem_pw) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+	}
 	
 	public String getMem_id() {
 		return mem_id;
@@ -47,12 +55,8 @@ public class Join {
 	public void setMem_type(String mem_type) {
 		this.mem_type = mem_type;
 	}
-	public int getMem_budget() {
-		return mem_budget;
-	}
-	public void setMem_budget(int mem_budget) {
-		this.mem_budget = mem_budget;
-	}
+	
+
 	
 	
 	

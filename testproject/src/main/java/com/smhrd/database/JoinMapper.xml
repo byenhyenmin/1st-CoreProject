@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- sql구문을 설정하는 파일 -->
-<!-- 문서 형식 정의(Document Type Definition, DTD)는 컴퓨터 용어로,
-     SGML 계열의 마크업 언어에서 문서 형식을 정의하는 것이다. -->
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -12,7 +9,7 @@
 
 	<!-- resultType, parameterType : 패키지명까지 풀네임 작성 원칙
 	     풀네임을 작성하고 싶지 않다면 mybatis_config.xml에 별칭을 작성 -->
-	<select id="selectAll" resultType="join">
+	<select id="selectAll" resultType="Join">
 		select * from t_member
 	</select>
 	
@@ -23,7 +20,7 @@
 	<insert id="insert"  parameterType="Join">
 		insert into t_member(mem_id, mem_pw, mem_birthdate, mem_gender, mem_joindate, mem_type)
 		values(#{mem_id},#{mem_pw},#{mem_birthdate},#{mem_gender}, SYSDATE,'M')
-		<!-- 중괄호 안에 띄어쓰기x, 구문 끝에 세미콜론x -->
+		
 	</insert>
 	
 	<select id="select" resultType="Join">
@@ -41,4 +38,11 @@
 		delete board
 		where board_num = #{board_num}
 	</delete>
+	
+	<select id="login" parameterType="Join" resultType="Join">
+		select * from t_member
+		where mem_id = #{mem_id} and mem_pw = #{mem_pw}
+	</select>
+
+	
 </mapper>  

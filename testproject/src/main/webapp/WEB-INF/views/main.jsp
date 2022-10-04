@@ -123,10 +123,9 @@ footer a:hover {
 .col-sm-6 {
 	width: 50%;
 }
-
-
 </style>
-<script type="text/javascript" src = "https://openapi.map.naver.com/openapi/v3/maps.js?clientId=rrv1szjpt7"></script>
+<script type="text/javascript"
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=rrv1szjpt7"></script>
 </head>
 <body>
 
@@ -171,7 +170,7 @@ footer a:hover {
 
 					<li><a href="#contact">커뮤니티</a></li>
 					<li><a href="#myPage">마이페이지</a></li>
-					<li><a href="#join">회원가입</a></li>
+					<li><a href="#join.do">회원가입</a></li>
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">language <span class="caret"></span></a>
@@ -185,7 +184,7 @@ footer a:hover {
 			</div>
 		</div>
 	</nav>
-	
+
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -225,27 +224,29 @@ footer a:hover {
 			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>
-	</div>                  
+	</div>
 
 	<div class="container">
 		<br>
 		<div class="row">
 			<div class="col-sm-6">
-				<div id="map" style="width:100%;height:400px;">
+				<div id="map" style="width: 100%; height: 400px;">
 					<p>네이버 지도 오픈 api</p>
 					<img src="#" class="img-responsive" style="width: 300%;"
 						alt="Image">
 				</div>
 			</div>
 
-			<div class="col-sm-6">
-				<div class="well">
-					<input type="text" name="id" placeholder=" 아이디"
-						style="height: 35px"> <input type="password" name="pw"
-						placeholder="비밀번호" style="height: 35px">
-					<button type="submit" id="btn">로그인</button>
+			<form action="main_login.do" method="post">
+				<div class="col-sm-6">
+					<div class="well">
+						<input type="text" name="id" placeholder="아이디"
+							style="height: 35px"> <input type="password" name="pw"
+							placeholder="비밀번호" style="height: 35px">
+						<button type="submit" id="btn">로그인</button>
+					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	<br>
@@ -266,7 +267,7 @@ footer a:hover {
 		<p>@ma!-string 추천시스템</p>
 	</footer>
 
-<script>
+	<script>
 	var mapOptions = {
 		    center: new naver.maps.LatLng(37.3595704, 127.105399),
 		    zoom: 10
@@ -274,8 +275,8 @@ footer a:hover {
 
 	var map = new naver.maps.Map('map', mapOptions);
 		</script>
-		</body>
-		</html>
+</body>
+</html>
 </script>
 </body>
 </html>
