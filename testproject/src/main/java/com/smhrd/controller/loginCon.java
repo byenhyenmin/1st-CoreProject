@@ -4,10 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.smhrd.model.Join;
-import com.smhrd.model.JoinDAO;
+import com.smhrd.model.MemberDTO;
+import com.smhrd.model.MemberDAO;
 
-public class main_loginCon implements Controller {
+public class loginCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -15,14 +15,14 @@ public class main_loginCon implements Controller {
 		String mem_id = request.getParameter("id");
 		String mem_pw = request.getParameter("pw");
 		
-		JoinDAO dao = new JoinDAO();
-		Join dto = new Join(mem_id, mem_pw);
-		Join loginDto = dao.login(dto);
+		MemberDAO dao = new MemberDAO();
+		MemberDTO dto = new MemberDTO(mem_id, mem_pw);
+		MemberDTO loginDto = dao.login(dto);
 		
 		if(loginDto != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginDto", loginDto);
-			return "main_login";
+			return "main";
 			
 		}else {
 			return "main";

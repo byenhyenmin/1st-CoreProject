@@ -8,11 +8,11 @@
 <!-- namespace : DAO 파일명을 원칙으로 작성한다. 
      mapper 파일이 여러개였을 때 namespace는 절대 중복되면 안 된다.
      table당 ___Mapper.xml 파일 하나!! -->
-<mapper namespace="com.smhrd.model.DAO">
+<mapper namespace="com.smhrd.model.BoardDAO">
 
 	<!-- resultType, parameterType : 패키지명까지 풀네임 작성 원칙
 	     풀네임을 작성하고 싶지 않다면 mybatis_config.xml에 별칭을 작성 -->
-	<select id="selectAll" resultType="join">
+	<select id="selectAll" resultType="Board">
 		select * from join
 	</select>
 	
@@ -20,17 +20,17 @@
 	     select : resultType(되돌려줄 결과값, 기본 자료형이 아니라면 지정)
 	     **parameter로 받아온 데이터는 #{필드명} 값을 가져올 수 있다. -->
 	
-	<insert id="insert" parameterType="join">
+	<insert id="insert" parameterType="Board">
 		insert into join(image, title, writer, content, join_num)
-		values(#{image},#{title},#{writer},#{cntent},join_num.nextval)
+		values(#{image},#{title},#{writer},#{content},join_num.nextval)
 		<!-- 중괄호 안에 띄어쓰기x, 구문 끝에 세미콜론x -->
 	</insert>
 	
-	<select id="select" resultType="join">
+	<select id="select" resultType="Board">
 		select * from join where join_num = #{join_num}
 	</select>
 	
-	<update id="update" parameterType="join">
+	<update id="update" parameterType="Board">
 		update join
 		set title = #{title}, writer= #{writer}, content = #{content}
 		where join_num = #{join_num}

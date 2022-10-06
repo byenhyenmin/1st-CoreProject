@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -129,6 +130,7 @@ footer a:hover {
 </head>
 <body>
 
+
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -169,7 +171,7 @@ footer a:hover {
 						</ul></li>
 
 					<li><a href="#contact">커뮤니티</a></li>
-					<li><a href="#myPage">마이페이지</a></li>
+					<li><a href="mypage_book">마이페이지</a></li>
 					<li><a href="#join">회원가입</a></li>
 
 					<li class="dropdown"><a class="dropdown-toggle"

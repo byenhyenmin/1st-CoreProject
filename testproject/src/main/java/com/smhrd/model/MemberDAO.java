@@ -8,39 +8,29 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.SqlSessionManager;
 
-public class JoinDAO {
+public class MemberDAO {
 	
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSessionFactory();
 	
 	// 회원가입
-	public int insert(Join join) {
+	public int insert(MemberDTO join) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);				
-		result =sqlSession.insert("insert", join);
+		result =sqlSession.insert("com.smhrd.model.MemberDAO.insert", join);
 		sqlSession.close();
 		
 		return result;
 	}
-
 	
 	// 회원정보수정
-//	public int update(Board board) {
-//		int result = 0;
-//		
-//		// 1. SqlSession 빌려오기
-//		// true --> auto commit
-//		SqlSession sqlSession = sqlSessionFactory.openSession(true);		
-//		
-//		// 2. SQL문 골라서 실행시키기
-//		result = sqlSession.update("com.smhrd.model.DAO.update", board);
-//		
-//		// 3. 빌린 Connection 돌려주기
-//		sqlSession.close();
-//		
-//		// 4. 실행결과 리턴
-//		return result;
-//		
-//	}
+	public int update(MemberDTO dto) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);		
+		result = sqlSession.update("com.smhrd.model.MemberDAO.update", dto);
+		sqlSession.close();
+	
+		return result;
+	}
 	
 	// 회원탈퇴
 //	public int delete(String board_num) {
@@ -55,9 +45,9 @@ public class JoinDAO {
 	
 /////////////////////////////////////////////////////////////////////////////////////////////	
 
-	// 로그인
-	public Join login(Join dto) {
-		Join result = null;
+	// 로그인(회원정보)
+	public MemberDTO login(MemberDTO dto) {
+		MemberDTO result = null;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		try {
@@ -70,8 +60,7 @@ public class JoinDAO {
 		
 		return result;
 	}
-	
-	// 로그아웃
+
 	
 	
 	

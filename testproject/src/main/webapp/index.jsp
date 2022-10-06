@@ -16,7 +16,7 @@ welcome!!
 
 
 --%>
-<jsp:forward page="gojoinCon.do"></jsp:forward>
+<jsp:forward page="GoMainCon.do"></jsp:forward>
 
 
 

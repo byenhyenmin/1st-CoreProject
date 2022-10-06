@@ -13,9 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
-import com.smhrd.controller.gojoinCon;
+import com.smhrd.controller.GoJoinCon;
+import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.joinCon;
-import com.smhrd.controller.main_loginCon;
+import com.smhrd.controller.logoutCon;
+import com.smhrd.controller.loginCon;
+import com.smhrd.controller.updateCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -27,8 +30,11 @@ public class FrontController extends HttpServlet {
 			
 		mappings = new HashMap<>();
 		mappings.put("/join.do",new joinCon());
-		mappings.put("/gojoinCon.do",new gojoinCon());
-		mappings.put("/main_login.do", new main_loginCon());
+		mappings.put("/GoMainCon.do",new GoMainCon());
+		mappings.put("/login.do", new loginCon());
+		mappings.put("/update.do", new updateCon());
+		mappings.put("/logout.do", new logoutCon());
+		mappings.put("/GoJoinCon.do",new GoJoinCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

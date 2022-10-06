@@ -1,6 +1,6 @@
 package com.smhrd.model;
 
-public class Join {
+public class MemberDTO {
 
 	private String mem_id;
 	private String mem_pw;
@@ -9,11 +9,11 @@ public class Join {
 	private String mem_joindate;
 	private String mem_type;
 	
-	public Join() {
+	public MemberDTO() {
 		
 	}
 
-	public Join(String mem_id, String mem_pw) {
+	public MemberDTO(String mem_id, String mem_pw) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;

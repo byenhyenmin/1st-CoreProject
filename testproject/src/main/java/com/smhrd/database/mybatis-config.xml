@@ -12,7 +12,8 @@
   </settings>
 	
 	<typeAliases>
-		<typeAlias type="com.smhrd.model.Join" alias="Join" />
+		<typeAlias type="com.smhrd.model.MemberDTO" alias="Member" />
+		<typeAlias type="com.smhrd.model.BoardDTO" alias="Board" />
 	</typeAliases>
 	<!-- 2) DB 연결과 관련된 정의를 기술 -->
 	<environments default="development">
@@ -35,6 +36,7 @@
 	<!-- 4) sql구문을 가지고 있는 파일과 연결 -->
 	<mappers>
 		<!-- 만약 mapper 파일이 여러개라면 mapper태그 여려개 잡아주기! -->
-		<mapper resource="com/smhrd/database/JoinMapper.xml" />
+		<mapper resource="com/smhrd/database/MemberMapper.xml" />
+		<mapper resource="com/smhrd/database/BoardMapper.xml" />
 	</mappers>
 </configuration>       

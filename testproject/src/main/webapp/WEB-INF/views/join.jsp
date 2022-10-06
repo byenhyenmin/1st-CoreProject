@@ -1,13 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <script>
+<html lang="en">
+<head>
+<title>mypage_memberinfo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- 회원가입 폼 CSS -->
+<style>
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-group {
+	width: 300px;
+	height: 50px;
+}
+
+.radio {
+	width: 300px;
+	height: 34px;
+}
+
+.btn {
+	background-color: green;
+	border-color: green;
+	width: 300px;
+	height: 34px;
+	color: white;
+}
+
+td {
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- 기능 -->
+	<script>
         function check_pw(){
  
             var pw = document.getElementById('pw').value;
@@ -27,8 +67,8 @@
                 window.alert('!,@,#,$,% 의 특수문자가 들어가 있지 않습니다.')
                 document.getElementById('pw').value='';
             }
-            if(document.getElementById('pw').value !='' && document.getElementById('pw2').value!=''){
-                if(document.getElementById('pw').value==document.getElementById('pw2').value){
+            if(document.getElementById('pw').value !='' && document.getElementById('pw_check').value!=''){
+                if(document.getElementById('pw').value==document.getElementById('pw_check').value){
                     document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
                     document.getElementById('check').style.color='blue';
                 }
@@ -39,41 +79,45 @@
             }
         }
     </script>
-    <style>
-        td{padding:5px;}
-    </style>
-    <body>
-        <form action= "join.do" style="padding: 15%" method="post">
-        <table  align="center">
-            <tr>
-               
-                <td width="40%">아이디</td>
-                <td><input type="text" name ="userId" id="id" ></td>
-            </tr>
-            <tr >
-                <td width="20%">비밀번호</td>
-                <td><input type="password" name="userPW" id="pw" onchange="check_pw()"></td>
-            </tr>
-            <tr>
-                <td width="20%">비밀번호 확인</td>
-                <td><input type="password" name="userPW2" id="pw2" onchange="check_pw()">&nbsp;<span id="check"></span></td>
-            </tr>
-            <tr >
-                <td width="20%">생년월일</td>
-                <td><input type="date" name = "birth" ></td>
-            </tr>
-           <tr >
-                <td width="20%">성별</td>
-                <td><select type="radio" name="gender1" id="gender">
-                <option name ="gender" value="M">남</option> 
-                <option name ="gender" value="F">여</option> 
-                </select></td>
-                
-            </tr>
-           <tr><td>
-           <button type="submit" class="btn">가입하기</button></td></tr>
-        </table>
-           </form>
-        
-    </body>
+    
+<!-- 회원가입 폼 -->    
+	<div class="container">
+		<form action="join.do" method="post">
+			<div class="form-group">
+				<label for="id">아이디</label> <input type="text" class="form-control"
+					name="userId">
+			</div>
+
+			<div class="form-group">
+				<label for="pw1">비밀번호</label> <input type="password"
+					class="form-control" name="userPw" id="pw" onchange="check_pw()">
+			</div>
+
+			<div class="form-group">
+				<label for="pw2">비밀번호 재확인</label> <input type="password"
+					class="form-control" name="userPw-check" id="pw_check"
+					onchange="check_pw()">&nbsp;<span id="check"></span>
+			</div>
+
+			<div class="form-group">
+				<label for="birth">생년월일</label> <input type="date"
+					class="form-control" name="birth">
+			</div>
+
+			<div class="form-group">
+				<label for="gender">성별</label><br>
+					<input type="radio" name="gender" value="M">남
+					<input type="radio" name="gender" value="F">여
+				</select>
+			</div>
+			<br>
+
+			<button type="submit" class="btn">가입하기</button>
+		</form>
+	</div>
+
+
+
+
+</body>
 </html>

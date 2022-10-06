@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.MemberDAO"%>
+<%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -129,6 +131,8 @@ footer a:hover {
 </head>
 <body>
 
+<% MemberDTO loginDto = (MemberDTO) session.getAttribute("loginDto"); %>
+
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -137,40 +141,33 @@ footer a:hover {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#myPage"><strong>시장 어디까지
+				<a class="navbar-brand" href=""><strong>시장 어디까지
 						가 봤니</strong></a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 
 					<!-- 메뉴 -->
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">살거리 <span class="caret"></span></a>
+					
+					<li><a href="main.jsp">홈</a></li>
+					<li><a href="#">시장소개</a></li>
+					<li><a href="shop.jsp">살거리</a></li>
+					<li><a href="food.jsp">먹거리</a></li>
+					<li><a href="attraction.jsp">볼거리</a></li>						
+					<li><a href="community.jsp">커뮤니티</a></li>
+					
+					//로그인 여부에 따라 페이지 구성 다름!
+					<% if(loginDto != null) { %>
+						<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown">마이페이지 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">카테고리1</a></li>
-							<li><a href="#">카테고리2</a></li>
-							<li><a href="#">카테고리3</a></li>
+							<li><a href="update.do">회원정보수정</a></li>
+							<li><a href="mypage_bookmark.jsp">즐겨찾기</a></li>
 						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">먹거리 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">카테고리1</a></li>
-							<li><a href="#">카테고리2</a></li>
-							<li><a href="#">카테고리3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">볼거리 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">행사</a></li>
-							<li><a href="#">공연</a></li>
-							<li><a href="#">전시</a></li>
-						</ul></li>
-
-					<li><a href="#contact">커뮤니티</a></li>
-					<li><a href="#myPage">마이페이지</a></li>
-					<li><a href="#join.do">회원가입</a></li>
+						<li><a href="logout.do">로그아웃</a></li>					
+					<% } else {  %>
+							<li><a href="GoJoinCon.do">회원가입</a></li>
+					<% } %>
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">language <span class="caret"></span></a>
@@ -236,8 +233,8 @@ footer a:hover {
 						alt="Image">
 				</div>
 			</div>
-
-			<form action="main_login.do" method="post">
+			<% if (loginDto == null) { %>
+			<form action="login.do" method="post">
 				<div class="col-sm-6">
 					<div class="well">
 						<input type="text" name="id" placeholder="아이디"
@@ -247,6 +244,7 @@ footer a:hover {
 					</div>
 				</div>
 			</form>
+			<% } %>
 		</div>
 	</div>
 	<br>

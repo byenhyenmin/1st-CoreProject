@@ -1,6 +1,6 @@
 package com.smhrd.model;
 
-public class Board {
+public class BoardDTO {
 	// table에 있는 column명이랑 동일해야 mybatis가 찾을 수 있다.
 	// el에서 사용할 때도 오타 주의할 것!!!!!!!
 	private String title;

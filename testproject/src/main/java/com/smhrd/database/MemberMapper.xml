@@ -5,44 +5,44 @@
 <!-- namespace : DAO 파일명을 원칙으로 작성한다. 
      mapper 파일이 여러개였을 때 namespace는 절대 중복되면 안 된다.
      table당 ___Mapper.xml 파일 하나!! -->
-<mapper namespace="com.smhrd.model.mastring">
+<mapper namespace="com.smhrd.model.MemberDAO">
 
 	<!-- resultType, parameterType : 패키지명까지 풀네임 작성 원칙
 	     풀네임을 작성하고 싶지 않다면 mybatis_config.xml에 별칭을 작성 -->
-	<select id="selectAll" resultType="Join">
+	<select id="selectAll" resultType="Member">
 		select * from t_member
 	</select>
 	
 	<!-- insert, update, delete 작성 : parameterType(받아오는 값)
 	     select : resultType(되돌려줄 결과값, 기본 자료형이 아니라면 지정)
 	     **parameter로 받아온 데이터는 #{필드명} 값을 가져올 수 있다. -->
-	
-	<insert id="insert"  parameterType="Join">
+
+	<!-- 회원가입 -->	
+	<insert id="insert"  parameterType="Member">
 		insert into t_member(mem_id, mem_pw, mem_birthdate, mem_gender, mem_joindate, mem_type)
 		values(#{mem_id},#{mem_pw},#{mem_birthdate},#{mem_gender}, SYSDATE,'M')
 		
 	</insert>
 	
-	<select id="select" resultType="Join">
-		select * from board where board_num = #{board_num}
+	<!-- 로그인 -->
+	<select id="login" parameterType="Member" resultType="Member">
+		select * from t_member
+		where mem_id = #{mem_id} and mem_pw = #{mem_pw}
 	</select>
 	
-	<update id="update" parameterType="Join">
-		update board
-		set title = #{title}, writer= #{writer}, content = #{content}
-		where board_num = #{board_num}
+	<!-- 회원정보수정 -->
+	<update id="update" parameterType="Member">
+		update t_member
+		set mem_pw = #{mem_pw}
+		where mem_id = #{mem_id}
 	</update>
 
 	<!-- 특정 하나만 채워줄 때는 굳이 parameterType 수집해줄 필요가 없다! -->
 	<delete id="delete">
-		delete board
-		where board_num = #{board_num}
+		delete t_member
+		where mem_id = #{mem_id}
 	</delete>
 	
-	<select id="login" parameterType="Join" resultType="Join">
-		select * from t_member
-		where mem_id = #{mem_id} and mem_pw = #{mem_pw}
-	</select>
 
 	
 </mapper>  
