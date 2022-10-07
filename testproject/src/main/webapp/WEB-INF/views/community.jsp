@@ -196,11 +196,11 @@ body {
 					<!-- el 표현식을 활용하면 scope영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
 					<c:forEach var="board" items="${list}">
 						<tr>
-							<td>${board.board_num}</td>
+							<td>${board.BOARD_NUM}</td>
 							<td><a
-								href="SelectOne.do?boardnum=${board.board_num}">${board.title}</a></td>
-							<td>${board.writer}</td>
-							<td>${board.wd}</td>
+								href="SelectOne.do?boardnum=${board.board_num}">${board.board_title}</a></td>
+							<td>${board.board_mem_id}</td>
+							<td>${board.board_wd}</td>
 
 							<!-- admin일 경우에만 삭제 가능 -->
 							<td>

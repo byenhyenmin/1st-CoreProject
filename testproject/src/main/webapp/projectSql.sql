@@ -284,6 +284,7 @@ ALTER TABLE t_menu
 /
 
 
+select * from t_member
 
 
 

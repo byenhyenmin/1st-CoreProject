@@ -13,7 +13,7 @@
 	<!-- resultType, parameterType : 패키지명까지 풀네임 작성 원칙
 	     풀네임을 작성하고 싶지 않다면 mybatis_config.xml에 별칭을 작성 -->
 	<select id="selectAll" resultType="Board">
-		select * from join
+		select * from t_board
 	</select>
 	
 	<!-- insert, update, delete 작성 : parameterType(받아오는 값)

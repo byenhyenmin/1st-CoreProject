@@ -154,7 +154,7 @@ footer a:hover {
 					<li><a href="shop.jsp">살거리</a></li>
 					<li><a href="food.jsp">먹거리</a></li>
 					<li><a href="attraction.jsp">볼거리</a></li>						
-					<li><a href="community.jsp">커뮤니티</a></li>
+					<li><a href="selectAll.do">커뮤니티</a></li>
 					
 					//로그인 여부에 따라 페이지 구성 다름!
 					<% if(loginDto != null) { %>

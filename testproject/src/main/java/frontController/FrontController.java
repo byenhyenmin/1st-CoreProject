@@ -17,6 +17,7 @@ import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.joinCon;
 import com.smhrd.controller.logoutCon;
+import com.smhrd.controller.selectAllCon;
 import com.smhrd.controller.loginCon;
 import com.smhrd.controller.updateCon;
 
@@ -35,6 +36,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/update.do", new updateCon());
 		mappings.put("/logout.do", new logoutCon());
 		mappings.put("/GoJoinCon.do",new GoJoinCon());
+		mappings.put("/selectAll.do", new selectAllCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
