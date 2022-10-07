@@ -17,11 +17,8 @@ public class joinCon implements Controller {
 		
 		String mem_id = request.getParameter("userId");
 		String mem_pw = request.getParameter("userPw");
-		// 비밀번호 재확인, 이름
 		String mem_birthdate = request.getParameter("birth");
-		
 		String mem_gender = request.getParameter("gender");
-	
 	
 		MemberDTO join = new MemberDTO();
 		join.setMem_id(mem_id);
@@ -30,16 +27,19 @@ public class joinCon implements Controller {
 		join.setMem_gender(mem_gender);
 		
 		MemberDAO dao = new MemberDAO();
-		dao.insert(join);
+		int row = dao.insert(join);
 	
-		System.out.println(join.getMem_id()+"아이디");
-		System.out.println(join.getMem_birthdate()+"생일");
+		
+		if(row > 0) {
+			return "main";
+			
+		}else {
+			System.out.println("회원가입실패");
+			return "redirect:/joinCon.do";
+		}
 		
 		
-		System.out.println("회원가입성공");
 		
-		
-		return "survey";
 	}
 
 }

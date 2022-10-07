@@ -31,19 +31,6 @@ public class MemberDAO {
 	
 		return result;
 	}
-	
-	// 회원탈퇴
-//	public int delete(String board_num) {
-//		
-//		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-//		int result = sqlSession.delete("delete", board_num);
-//		sqlSession.close();
-//		
-//		return result;
-//		
-//	}
-	
-/////////////////////////////////////////////////////////////////////////////////////////////	
 
 	// 로그인(회원정보)
 	public MemberDTO login(MemberDTO dto) {

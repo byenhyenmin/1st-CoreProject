@@ -2,6 +2,9 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,7 +166,7 @@ footer a:hover {
 						<ul class="dropdown-menu">
 							<li><a href="update.do">회원정보수정</a></li>
 							<li><a href="mypage_bookmark.jsp">즐겨찾기</a></li>
-						</ul></li>
+						</ul></li>					
 						<li><a href="logout.do">로그아웃</a></li>					
 					<% } else {  %>
 							<li><a href="GoJoinCon.do">회원가입</a></li>
@@ -244,6 +247,15 @@ footer a:hover {
 					</div>
 				</div>
 			</form>
+			<% } else { %>
+			<div class="col-sm-6">
+				<div>
+					<p><%=loginDto.getMem_id()%>님 환영합니다.</p>
+					<button onclick="location.herf='survey.jsp'">추천받기</button>
+					<img src="#" class="img-responsive" style="width: 300%;"
+						alt="Image">
+				</div>
+			</div>		
 			<% } %>
 		</div>
 	</div>

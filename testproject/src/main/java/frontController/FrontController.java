@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.controller.Controller;
 import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMainCon;
+import com.smhrd.controller.GoSurveyCon;
 import com.smhrd.controller.joinCon;
 import com.smhrd.controller.logoutCon;
 import com.smhrd.controller.selectAllCon;
@@ -37,6 +38,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/logout.do", new logoutCon());
 		mappings.put("/GoJoinCon.do",new GoJoinCon());
 		mappings.put("/selectAll.do", new selectAllCon());
+		mappings.put("/GoSurveyCon.do", new GoSurveyCon());
+		
+	
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
