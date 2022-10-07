@@ -23,20 +23,20 @@ public class BoardDAO {
 		return list;
 	}
 	
-	public int insert(BoardDAO Board) {
+	public int insert(BoardDTO dto) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		result = sqlSession.insert("com.smhrd.model.BoardDAO.insert", Board);
+		result = sqlSession.insert("com.smhrd.model.BoardDAO.insert", dto);
 		sqlSession.close(); 
 		return result;
 	}
 	
-	public BoardDAO selectOne(String Board_num) {
-		BoardDAO result = null;
+	public BoardDTO selectOne(String Board_num) {
+		BoardDTO result = null;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		result = sqlSession.selectOne("com.smhrd.BoardDAO.selectOne", Board_num);
+		result = sqlSession.selectOne("com.smhrd.model.BoardDAO.selectOne", Board_num);
 		
 		sqlSession.close();
 		 
@@ -47,7 +47,7 @@ public class BoardDAO {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		result = sqlSession.update("com.smhrd.BoardDAO.update", board);
+		result = sqlSession.update("com.smhrd.model.BoardDAO.update", board);
 		sqlSession.close();
 		 return result;
 		
@@ -57,7 +57,7 @@ public class BoardDAO {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		result = sqlSession.delete("com.smhrd.BoardDAO.update", board_num);
+		result = sqlSession.delete("com.smhrd.model.BoardDAO.update", board_num);
 		
 		sqlSession.close();
 		 return result;

@@ -160,12 +160,12 @@ body {
 			<div class="panel-body">
 				<form action="Insert.do" enctype="multipart/form-data" method="post">
 					<div class="form-group">
-						<label style="color: green;">제목:</label> <input type="text"
-							class="form-control" name="title">
+						<label style="color: green;">제목:</label> 
+						<input type="text" class="form-control" name="title">
 					</div>
 					<div class="form-group">
-						<label style="color: green;">작성자:</label> <input type="text"
-							class="form-control" name="writer">
+						<label style="color: green;">작성자:</label> 
+						<input type="text" class="form-control" name="writer">
 					</div>
 					<div class="form-group">
 						<label>첨부파일</label> <input type="file" name="file">

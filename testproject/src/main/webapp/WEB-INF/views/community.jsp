@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -196,7 +199,7 @@ body {
 					<!-- el 표현식을 활용하면 scope영역에 객체바인딩 된 데이터를 바로 꺼내올 수 있다. -->
 					<c:forEach var="board" items="${list}">
 						<tr>
-							<td>${board.BOARD_NUM}</td>
+							<td>${board.board_num}</td>
 							<td><a
 								href="SelectOne.do?boardnum=${board.board_num}">${board.board_title}</a></td>
 							<td>${board.board_mem_id}</td>

@@ -184,8 +184,7 @@ body {
 						</tr>
 					</div>
 
-					<div class="date"
-						style="position: relative; width: 100%; text-align: right;">
+					<div class="date" style="position: relative; width: 100%; text-align: right;">
 						<p>작성일</p>
 					</div>
 

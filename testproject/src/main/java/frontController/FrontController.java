@@ -13,14 +13,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.GoInsertCon;
 import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.GoSurveyCon;
+import com.smhrd.controller.InsertCon;
 import com.smhrd.controller.joinCon;
 import com.smhrd.controller.logoutCon;
 import com.smhrd.controller.selectAllCon;
+import com.smhrd.controller.selectOneCon;
 import com.smhrd.controller.loginCon;
 import com.smhrd.controller.updateCon;
+
+
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -39,7 +44,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoJoinCon.do",new GoJoinCon());
 		mappings.put("/selectAll.do", new selectAllCon());
 		mappings.put("/GoSurveyCon.do", new GoSurveyCon());
-		
+		mappings.put("/SelectOne.do", new selectOneCon());
+		mappings.put("/GoInsert.do", new GoInsertCon());
+		mappings.put("/Insert.do", new InsertCon());
 	
 	}
 
