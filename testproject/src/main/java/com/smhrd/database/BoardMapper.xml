@@ -31,9 +31,9 @@
 	</select>
 	
 	<update id="update" parameterType="Board">
-		update join
-		set title = #{title}, writer= #{writer}, content = #{content}
-		where join_num = #{join_num}
+		update t_board
+		set board_title = #{board_title}, board_content = #{board_content}
+		where board_num = #{board_num}
 	</update>
 
 	<!-- 특정 하나만 채워줄 때는 굳이 parameterType 수집해줄 필요가 없다! -->

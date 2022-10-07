@@ -16,7 +16,7 @@ public class InsertCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-String savePath = request.getServletContext().getRealPath("resources/image");
+String savePath = request.getServletContext().getRealPath("/resources/image");
 		
 		int maxSize = 1024 * 1024 * 5;
 		String encoding = "UTF-8";

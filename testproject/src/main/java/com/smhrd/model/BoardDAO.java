@@ -43,13 +43,13 @@ public class BoardDAO {
 		 return result;
 	}
 	
-	public int update(BoardDAO board) {
+	public int update(BoardDTO dto) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		result = sqlSession.update("com.smhrd.model.BoardDAO.update", board);
+		result = sqlSession.update("com.smhrd.model.BoardDAO.update", dto);
 		sqlSession.close();
-		 return result;
+		return result;
 		
 	}
 	

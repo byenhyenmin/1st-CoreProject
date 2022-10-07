@@ -153,7 +153,7 @@ text-align: center;
   
     <div class="panel-body">
             
-        <form action="Insert.do" enctype="multipart/form-data" method="post">
+        <form action="b_update.do" enctype="multipart/form-data" method="post">
           <div class="form-group">
             <label style="color:green ;">제목:</label>
             <input type="text" class="form-control" name="title" value = "${board.board_title}">

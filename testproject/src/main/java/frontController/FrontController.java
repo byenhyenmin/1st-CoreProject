@@ -18,6 +18,7 @@ import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.GoSurveyCon;
 import com.smhrd.controller.InsertCon;
+import com.smhrd.controller.b_UpdateCon;
 import com.smhrd.controller.joinCon;
 import com.smhrd.controller.logoutCon;
 import com.smhrd.controller.selectAllCon;
@@ -47,6 +48,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/SelectOne.do", new selectOneCon());
 		mappings.put("/GoInsert.do", new GoInsertCon());
 		mappings.put("/Insert.do", new InsertCon());
+		mappings.put("/b_update.do", new b_UpdateCon());
 	
 	}
 
