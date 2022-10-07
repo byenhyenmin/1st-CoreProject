@@ -31,9 +31,9 @@ String savePath = request.getServletContext().getRealPath("/resources/image");
 		
 		String board_title = multi.getParameter("title");
 		String board_mem_id = multi.getParameter("writer");
-		String board_image = multi.getParameter("file");
+		String board_image = multi.getFilesystemName("file");
 		String board_content = multi.getParameter("content");
-		
+		System.out.println("insertcon"+board_image);
 		BoardDTO dto = new BoardDTO();
 		dto.setBoard_title(board_title);
 		dto.setBoard_mem_id(board_mem_id);

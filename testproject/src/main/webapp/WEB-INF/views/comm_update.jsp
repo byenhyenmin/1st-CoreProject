@@ -166,8 +166,8 @@ text-align: center;
          
          <div class="form-group">
          
-         <label>첨부파일</label>
-         <input type="file" name = "file" value = "${board.board_image}">
+         <label></label>
+         <img  align="center" width = "25%" height="50%" name = "file" src = "resources/image/${board.board_image}">
          </div>
          
          
