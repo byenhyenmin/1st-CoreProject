@@ -53,7 +53,7 @@
 	</div>
 	<div class="container">
 		<!-- ★ Flask 연동 ★ : 설문조사 내용 Python으로 연동!! action = 주소값 -->
-		<form accept-charset="utf-8" action="" method="post">
+		<form accept-charset="utf-8" action="http://127.0.0.1:9000/data" method="post">
 			<div class="form-group">
 				<label for="mem_id"></label><br><input type="hidden" name="mem_id" value=<%=mem_id %>> 
 			</div>
