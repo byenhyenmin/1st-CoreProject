@@ -15,8 +15,8 @@ public class b_UpdateCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-String savePath = request.getServletContext().getRealPath("/resources/image");
-		
+		String savePath = request.getServletContext().getRealPath("/upload");
+		System.out.println("update.do 실행해봐");
 		int maxSize = 1024 * 1024 * 5;
 		String encoding = "UTF-8";
 		MultipartRequest multi = null;
@@ -31,6 +31,7 @@ String savePath = request.getServletContext().getRealPath("/resources/image");
 		String board_title = multi.getParameter("title");
 		String board_content = multi.getParameter("content");
 		String board_num = multi.getParameter("board_num");
+		System.out.println(board_title+"넘어왔니?");
 		
 		BoardDTO dto = new BoardDTO();
 		dto.setBoard_title(board_title);
