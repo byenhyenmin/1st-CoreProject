@@ -37,7 +37,7 @@
 	</update>
 
 	<!-- 특정 하나만 채워줄 때는 굳이 parameterType 수집해줄 필요가 없다! -->
-	<delete id="delete">
+	<delete id="delete" parameterType = "Board">
 		delete from t_board
 		where board_num = #{board_num}
 	</delete>

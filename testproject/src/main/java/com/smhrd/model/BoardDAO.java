@@ -57,7 +57,7 @@ public class BoardDAO {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
-		result = sqlSession.delete("com.smhrd.model.BoardDAO.update", board_num);
+		result = sqlSession.delete("com.smhrd.model.BoardDAO.delete", board_num);
 		
 		sqlSession.close();
 		 return result;

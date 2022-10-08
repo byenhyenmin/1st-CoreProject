@@ -11,7 +11,7 @@ public class DeleteCon implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		String board_num = request.getParameter("boardnum");
-		
+		System.out.println(board_num);
 		BoardDAO dao = new BoardDAO();
 		
 		int result = dao.delete(board_num);
