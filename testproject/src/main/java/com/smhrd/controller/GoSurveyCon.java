@@ -7,16 +7,15 @@ public class GoSurveyCon implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		
+		String mem_id = request.getParameter("mem_id");
+		request.setAttribute("mem_id",mem_id);
 		
 		System.out.println("설문조사로이동★^^7");
 		
 		return "survey";
 		
-		
-		
-		
-		
+			
 	}
 
 }

@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -40,14 +41,12 @@
 	color: white;
 }
 
-td {
-	padding: 5px;
-}
 </style>
 </head>
 <body>
 
-<% String mem_id = (String) request.getAttribute("mem_id"); %>
+<% String mem_id =(String)request.getAttribute("mem_id"); %>
+
 <!-- 설문조사 폼 -->
 	<div class="header">
 		<h1>설문조사</h1>
@@ -56,15 +55,15 @@ td {
 		<!-- ★ Flask 연동 ★ : 설문조사 내용 Python으로 연동!! action = 주소값 -->
 		<form accept-charset="utf-8" action="" method="post">
 			<div class="form-group">
-				<label for="mem_id"></label><br><input type="hidden" name="mem_id" value="${mem_id}"> 
+				<label for="mem_id"></label><br><input type="hidden" name="mem_id" value=<%=mem_id %>> 
 			</div>
 		
 			<div class="form-group">
 				<p><strong>관광목적</strong></p>
-				<label class="radio-inline"><input id="shopping" type="radio" name="genre" value="살거리">쇼핑</label>
-				<label class="radio-inline"><input id="eating" type="radio" name="genre" value="먹거리">식사</label>
-				<label class="radio-inline"><input id="sightseeing" type="radio" name="genre" value="볼거리">관광</label>
-				<label class="radio-inline"><input id="" type="radio" name="genre" value="할거리">체험</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="살거리">쇼핑</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="먹거리">식사</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="볼거리" >관광</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="할거리">체험</label>
 			</div>
 
 			<div class="form-group">
@@ -130,9 +129,9 @@ td {
 		</form>
 	</div>
 
-
 <!-- 기능 -->
 <script>
+
 //jquery radio event처리하기
 $("input[name='genre']").change(function() {
 	// 살거리 선택 시
@@ -167,7 +166,6 @@ $("input[name='genre']").change(function() {
 	}
 	
 })
- 
 </script>
 		 
 

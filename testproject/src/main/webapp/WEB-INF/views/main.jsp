@@ -159,7 +159,7 @@ footer a:hover {
 					<li><a href="attraction.jsp">볼거리</a></li>						
 					<li><a href="selectAll.do">커뮤니티</a></li>
 					
-					//로그인 여부에 따라 페이지 구성 다름!
+					<!-- 로그인 여부에 따라 페이지 구성 다름! -->
 					<% if(loginDto != null) { %>
 						<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown">마이페이지 <span class="caret"></span></a>
@@ -251,7 +251,7 @@ footer a:hover {
 			<div class="col-sm-6">
 				<div>
 					<p><%=loginDto.getMem_id()%>님 환영합니다.</p>
-					<button onclick="location.herf='survey.jsp'">추천받기</button>
+					<button onclick="location.href='GoSurveyCon.do?mem_id=<%=loginDto.getMem_id()%>'">추천받기</button >
 					<img src="#" class="img-responsive" style="width: 300%;"
 						alt="Image">
 				</div>

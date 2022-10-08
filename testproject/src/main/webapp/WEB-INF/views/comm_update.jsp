@@ -63,7 +63,7 @@
    
 .jumbotron {
    display: flex;
-    align-items: center;
+   align-items: center;
    justify-content: center;
    background-image: url("assets/images/contact-bg.jpg");
 }
@@ -77,14 +77,10 @@ body{
 .panel-body{
     background-color: whitesmoke;
     opacity: 0.94;
-
-
-
 }
 
 .btn-sm{
-text-align: center;
-
+	text-align: center;
 
 }
 
