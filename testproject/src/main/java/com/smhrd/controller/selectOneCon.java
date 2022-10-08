@@ -22,6 +22,8 @@ public class selectOneCon implements Controller {
 		
 		System.out.println(dao.selectOne(board_num).getBoard_image()+"인가요?");
 		
+		
+		
 		request.setAttribute("board", board);
 		
 		

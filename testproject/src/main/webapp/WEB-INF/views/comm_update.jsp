@@ -164,7 +164,7 @@ body{
          <div class="form-group">
          
          <label></label>
-         <img  align="center" width = "25%" height="50%" name = "file" src = "resources/image/${board.board_image}">
+         <img  align="middle" width = "25%" height="50%" name = "file" src = "${pageContext.request.contextPath}/resources/image/${board.board_image}">
          </div>
          
          
@@ -179,7 +179,7 @@ body{
         </form>
         
     
-    <div>
+    </div>
 
 
 </body>
