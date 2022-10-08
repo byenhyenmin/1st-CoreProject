@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page isELIgnored="false" %>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -164,7 +166,7 @@ body{
          <div class="form-group">
          
          <label></label>
-         <img  align="middle" width = "25%" height="50%" name = "file" src = "${pageContext.request.contextPath}/resources/image/${board.board_image}">
+         <img  align="middle" width = "25%" height="50%" name = "file" src = "${pageContext.request.contextPath}/upload/${board.board_image}">
          </div>
          
          
