@@ -16,7 +16,7 @@ public class InsertCon implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-String savePath = request.getServletContext().getRealPath("/resources/image");
+String savePath = request.getServletContext().getRealPath("resources/image");
 		
 		int maxSize = 1024 * 1024 * 5;
 		String encoding = "UTF-8";
@@ -29,6 +29,8 @@ String savePath = request.getServletContext().getRealPath("/resources/image");
 		}
 		
 		
+		
+		
 		String board_title = multi.getParameter("title");
 		String board_mem_id = multi.getParameter("writer");
 		String board_image = multi.getFilesystemName("file");
@@ -39,7 +41,11 @@ String savePath = request.getServletContext().getRealPath("/resources/image");
 		dto.setBoard_mem_id(board_mem_id);
 		dto.setBoard_image(board_image);
 		dto.setBoard_content(board_content);
-
+		String fileName = multi.getFilesystemName("file");
+		
+		
+		
+		
 		BoardDAO dao = new BoardDAO();
 		
 		int row = dao.insert(dto);
