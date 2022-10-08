@@ -1,7 +1,7 @@
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 
@@ -144,38 +144,38 @@ footer a:hover {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href=""><strong>���� ������
-						�� �ô�</strong></a>
+				<a class="navbar-brand" href=""><strong>시장 어디까지
+						가 봤니</strong></a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
 
-					<!-- �޴� -->
+					<!-- 메뉴 -->
 					
-					<li><a href="main.jsp">Ȩ</a></li>
-					<li><a href="#">����Ұ�</a></li>
-					<li><a href="shop.jsp">��Ÿ�</a></li>
-					<li><a href="food.jsp">�԰Ÿ�</a></li>
-					<li><a href="attraction.jsp">���Ÿ�</a></li>						
-					<li><a href="selectAll.do">Ŀ�´�Ƽ</a></li>
+					<li><a href="main.jsp">홈</a></li>
+					<li><a href="#">시장소개</a></li>
+					<li><a href="shop.jsp">살거리</a></li>
+					<li><a href="food.jsp">먹거리</a></li>
+					<li><a href="attraction.jsp">볼거리</a></li>						
+					<li><a href="selectAll.do">커뮤니티</a></li>
 					
-					<!-- �α��� ���ο� ���� ������ ���� �ٸ�! -->
+					<!-- 로그인 여부에 따라 페이지 구성 다름! -->
 					<% if(loginDto != null) { %>
 						<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown">���������� <span class="caret"></span></a>
+						data-toggle="dropdown">마이페이지 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="update.do">ȸ����������</a></li>
-							<li><a href="mypage_bookmark.jsp">���ã��</a></li>
+							<li><a href="update.do">회원정보수정</a></li>
+							<li><a href="mypage_bookmark.jsp">즐겨찾기</a></li>
 						</ul></li>					
-						<li><a href="logout.do">�α׾ƿ�</a></li>					
+						<li><a href="logout.do">로그아웃</a></li>					
 					<% } else {  %>
-							<li><a href="GoJoinCon.do">ȸ������</a></li>
+							<li><a href="GoJoinCon.do">회원가입</a></li>
 					<% } %>
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">language <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">�ѱ���</a></li>
+							<li><a href="#">한국어</a></li>
 							<li><a href="#">English</a></li>
 						</ul></li>
 
@@ -198,9 +198,9 @@ footer a:hover {
 				<img src="assets/images/main-bg.png" alt="Image">
 				<div class="carousel-caption">
 					<h1>
-						<b>�����޹�߽��� ����</b>
+						<b>남도달밤야시장 오픈</b>
 					</h1>
-					<p>�帮�ӽ� ����! ����ŷ ����! ǳ������! ARü��! �پ��� �԰Ÿ�!</p>
+					<p>드리머스 공연! 버스킹 공연! 풍물놀이! AR체험! 다양한 먹거리!</p>
 				</div>
 			</div>
 
@@ -208,9 +208,9 @@ footer a:hover {
 				<img src="assets/images/main-bg2.png" alt="Image">
 				<div class="carousel-caption">
 					<h1>
-						<b>ACC�����ƽþƹ�ȭ����</b>
+						<b>ACC국립아시아문화전당</b>
 					</h1>
-					<p>�پ��� ���ÿ� ����! ACC�˾�! ��ȭü������!</p>
+					<p>다양한 전시와 공연! ACC팝업! 문화체험투어!</p>
 				</div>
 			</div>
 		</div>
@@ -231,7 +231,7 @@ footer a:hover {
 		<div class="row">
 			<div class="col-sm-6">
 				<div id="map" style="width: 100%; height: 400px;">
-					<p>���̹� ���� ���� api</p>
+					<p>네이버 지도 오픈 api</p>
 					<img src="#" class="img-responsive" style="width: 300%;"
 						alt="Image">
 				</div>
@@ -240,18 +240,18 @@ footer a:hover {
 			<form action="login.do" method="post">
 				<div class="col-sm-6">
 					<div class="well">
-						<input type="text" name="id" placeholder="���̵�"
+						<input type="text" name="id" placeholder="아이디"
 							style="height: 35px"> <input type="password" name="pw"
-							placeholder="��й�ȣ" style="height: 35px">
-						<button type="submit" id="btn">�α���</button>
+							placeholder="비밀번호" style="height: 35px">
+						<button type="submit" id="btn">로그인</button>
 					</div>
 				</div>
 			</form>
 			<% } else { %>
 			<div class="col-sm-6">
 				<div>
-					<p><%=loginDto.getMem_id()%>�� ȯ���մϴ�.</p>
-					<button onclick="location.href='GoSurveyCon.do?mem_id=<%=loginDto.getMem_id()%>'">��õ�ޱ�</button >
+					<p><%=loginDto.getMem_id()%>님 환영합니다.</p>
+					<button onclick="location.href='GoSurveyCon.do?mem_id=<%=loginDto.getMem_id()%>'">추천받기</button >
 					<img src="#" class="img-responsive" style="width: 300%;"
 						alt="Image">
 				</div>
@@ -274,17 +274,17 @@ footer a:hover {
 			})
 		</script>
 
-		<p>@ma!-string ��õ�ý���</p>
+		<p>@ma!-string 추천시스템</p>
 	</footer>
 
 	<script>
-	var mapOptions = {
-		    center: new naver.maps.LatLng(37.3595704, 127.105399),
-		    zoom: 10
+		var mapOptions = {
+			center : new naver.maps.LatLng(37.3595704, 127.105399),
+			zoom : 10
 		};
 
-	var map = new naver.maps.Map('map', mapOptions);
-		</script>
+		var map = new naver.maps.Map('map', mapOptions);
+	</script>
 </body>
 </html>
 </script>
