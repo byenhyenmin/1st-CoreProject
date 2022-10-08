@@ -150,6 +150,7 @@ body{
     <div class="panel-body">
             
         <form action="b_update.do" enctype="multipart/form-data" method="post">
+        <input type = "hidden" name = "board_num" value = "${board.board_num}">
           <div class="form-group">
             <label style="color:green ;">제목:</label>
             <input type="text" class="form-control" name="title" value = "${board.board_title}">

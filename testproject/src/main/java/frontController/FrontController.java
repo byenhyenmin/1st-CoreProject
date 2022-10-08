@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.controller.Controller;
+import com.smhrd.controller.DeleteCon;
 import com.smhrd.controller.GoInsertCon;
 import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMainCon;
@@ -49,6 +50,7 @@ public class FrontController extends HttpServlet {
 		mappings.put("/GoInsert.do", new GoInsertCon());
 		mappings.put("/Insert.do", new InsertCon());
 		mappings.put("/b_update.do", new b_UpdateCon());
+		mappings.put("/DeleteCon.do", new DeleteCon());
 	
 	}
 
