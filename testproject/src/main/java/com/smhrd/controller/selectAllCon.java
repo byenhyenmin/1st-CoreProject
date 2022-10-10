@@ -17,7 +17,7 @@ public class selectAllCon implements Controller {
 		BoardDAO dao = new BoardDAO();
 		ArrayList<BoardDTO> list = dao.selectAll();
 		
-		
+		System.out.println(list);
 		request.setAttribute("list",list);
 		
 		return "community";

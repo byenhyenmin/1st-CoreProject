@@ -166,6 +166,7 @@ footer a:hover {
 						<ul class="dropdown-menu">
 							<li><a href="update.do">회원정보수정</a></li>
 							<li><a href="mypage_bookmark.jsp">즐겨찾기</a></li>
+							<li><a href="MypageCon.do">찜목록</a></li>
 						</ul></li>					
 						<li><a href="logout.do">로그아웃</a></li>					
 					<% } else {  %>

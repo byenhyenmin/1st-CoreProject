@@ -40,5 +40,6 @@
 		<!-- 만약 mapper 파일이 여러개라면 mapper태그 여려개 잡아주기! -->
 		<mapper resource="com/smhrd/database/MemberMapper.xml" />
 		<mapper resource="com/smhrd/database/BoardMapper.xml" />
+		<mapper resource="com/smhrd/database/MypageMapper.xml" />
 	</mappers>
 </configuration>       

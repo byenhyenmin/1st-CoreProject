@@ -1,17 +1,25 @@
 package com.smhrd.model;
 
 public class MypageDTO {
-
+	// table에 있는 column명이랑 동일해야 mybatis가 찾을 수 있다.
+		// el에서 사용할 때도 오타 주의할 것!!!!!!!
+	private String MYPAGE_SEQ;
 	private String  mypage_id;
 	private String  shop_id;
 	private String  shop_img;
 	private String  shop_name;
-	private int MYPAGE_SEQ;
+	public String getShop_name() {
+		return shop_name;
+	}
+	public void setShop_name(String shop_name) {
+		this.shop_name = shop_name;
+	}
 	
-	public int getMYPAGE_SEQ() {
+	
+	public String getMYPAGE_SEQ() {
 		return MYPAGE_SEQ;
 	}
-	public void setMYPAGE_SEQ(int mYPAGE_SEQ) {
+	public void setMYPAGE_SEQ(String mYPAGE_SEQ) {
 		MYPAGE_SEQ = mYPAGE_SEQ;
 	}
 	public String getMypage_id() {
