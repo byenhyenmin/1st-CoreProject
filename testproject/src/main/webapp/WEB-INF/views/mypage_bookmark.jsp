@@ -132,6 +132,23 @@
  
  <div>
  
+ 					<c:forEach var="mypage" items="${list}">
+						<tr>
+							<td>${mypage.MYPAGE_SEQ}</td>
+							<td><a
+								href="SelectOne.do?boardnum=${mypage.MYPAGE_SEQ}">${mypage.shop_name}</a></td>
+							<td><img  src="${mypage.shop_img}"></td>
+
+							<!-- admin일 경우에만 삭제 가능 -->
+							<td>
+								<button class="btn" 
+									onclick="location.href='DeleteCon.do?boardnum=${mypage.MYPAGE_SEQ}'">삭제</button>
+							</td>
+						</tr>
+					</c:forEach>
+ 
+ 
+ 
  
  
  </div>

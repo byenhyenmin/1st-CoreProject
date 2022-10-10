@@ -13,7 +13,7 @@
 	<!-- resultType, parameterType : 패키지명까지 풀네임 작성 원칙
 	     풀네임을 작성하고 싶지 않다면 mybatis_config.xml에 별칭을 작성 -->
 	<select id="MypageSelectAll" resultType="Mypage">
-		select my.mypage_id,my.shop_id,shop.shop_img
+		select my.MYPAGE_SEQ,my.mypage_id,my.shop_id,shop.shop_name,shop.shop_img
 		from t_member_mypage my,t_shop shop
 		where my.shop_id = shop.shop_cd and 
 		my.mypage_id =#{mypage_id}	

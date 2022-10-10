@@ -19,6 +19,7 @@ import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.GoSurveyCon;
 import com.smhrd.controller.InsertCon;
+import com.smhrd.controller.MypageCon;
 import com.smhrd.controller.b_UpdateCon;
 import com.smhrd.controller.joinCon;
 import com.smhrd.controller.logoutCon;
@@ -51,7 +52,8 @@ public class FrontController extends HttpServlet {
 		mappings.put("/Insert.do", new InsertCon());
 		mappings.put("/b_update.do", new b_UpdateCon());
 		mappings.put("/DeleteCon.do", new DeleteCon());
-	
+		mappings.put("/MypageCon.do",new MypageCon());
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -5,8 +5,15 @@ public class MypageDTO {
 	private String  mypage_id;
 	private String  shop_id;
 	private String  shop_img;
+	private String  shop_name;
+	private int MYPAGE_SEQ;
 	
-	
+	public int getMYPAGE_SEQ() {
+		return MYPAGE_SEQ;
+	}
+	public void setMYPAGE_SEQ(int mYPAGE_SEQ) {
+		MYPAGE_SEQ = mYPAGE_SEQ;
+	}
 	public String getMypage_id() {
 		return mypage_id;
 	}
