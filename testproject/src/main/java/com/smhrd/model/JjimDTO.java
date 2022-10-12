@@ -1,6 +1,6 @@
 package com.smhrd.model;
 
-public class MypageDTO {
+public class JjimDTO {
 	// table에 있는 column명이랑 동일해야 mybatis가 찾을 수 있다.
 		// el에서 사용할 때도 오타 주의할 것!!!!!!!
 	private String MYPAGE_SEQ;
@@ -9,9 +9,11 @@ public class MypageDTO {
 	private String  shop_img;
 	private String  shop_name;
 	
-	
-	
-	
+	public JjimDTO(String mypage_id, String shop_id) {
+		super();
+		this.mypage_id = mypage_id;
+		this.shop_id = shop_id;
+	}
 	
 	public String getShop_name() {
 		return shop_name;

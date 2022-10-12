@@ -12,18 +12,23 @@
 
 	<!-- resultType, parameterType : 패키지명까지 풀네임 작성 원칙
 	     풀네임을 작성하고 싶지 않다면 mybatis_config.xml에 별칭을 작성 -->
-	<select id="MypageSelectAll" resultType="Mypage">
+	<select id="MypageSelectAll"  parameterType="Mypage" resultType="Mypage">
 		select my.MYPAGE_SEQ as MYPAGE_SEQ ,my.mypage_id as mypage_id ,my.shop_id as shop_id,shop.shop_name as shop_name,shop.shop_img as shop_img
 		from t_member_mypage my,t_shop shop
-		where my.shop_id = shop.shop_cd and my.mypage_id = 'emboss22'
-	
+		where my.shop_id = shop.shop_cd and my.mypage_id = #{mypage_id}
 	</select>
 	
 	<!-- insert, update, delete 작성 : parameterType(받아오는 값)
 	     select : resultType(되돌려줄 결과값, 기본 자료형이 아니라면 지정)
 	     **parameter로 받아온 데이터는 #{필드명} 값을 가져올 수 있다. -->
+	<delete id="Mydelete" parameterType="Mypage">
+	
+	delete from t_member_mypage where MYPAGE_SEQ = #{MYPAGE_SEQ}
 	
 	
+	</delete>
+		
+
 	
 	
 	

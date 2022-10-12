@@ -133,19 +133,19 @@
     <h3>마이페이지</h3>
   </div>
  
- <div>
+ <div id="list" style="align-items: center;">
  
  					<c:forEach var="mypage" items="${mylist}">
 						<tr>
 							<td>${mypage.MYPAGE_SEQ}</td>
-							<td><a
+							<td ><a
 								>${mypage.shop_name}</a></td>
-							<td><img  src="${mypage.shop_img}"></td>
+							<td><img width="250px" height="150px" src="${mypage.shop_img}"></td>
 			
 							<!-- admin일 경우에만 삭제 가능 -->
 							<td>
 								<button class="btn" 
-									onclick="location.href='DeleteCon.do?boardnum=${mypage.MYPAGE_SEQ}'">삭제</button>
+									onclick="location.href='MYpageDeleteCon.do?MYPAGE_SEQ=${mypage.MYPAGE_SEQ}&mypage_id=${mypage.mypage_id}'">삭제</button>
 							</td>
 						</tr>
 					</c:forEach>

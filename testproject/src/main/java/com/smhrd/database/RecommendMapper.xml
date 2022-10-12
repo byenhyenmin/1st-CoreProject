@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.smhrd.model.RecommendDAO">
+ 
+ 	<!-- mem_id를 통해 추천받은 항목 찾기 -->
+	<select id="select" resultType="Recommend">
+		select s.SHOP_NAME as shop_name, s.SHOP_IMG as shop_img,s.shop_cd as shop_cd,r.mem_id as mem_id
+		from t_recommendation r, t_shop s
+		where r.mem_id = #{mem_id}
+		and r.shop_cd = s.shop_cd 
+	</select> 
+
+	
+	
+</mapper>

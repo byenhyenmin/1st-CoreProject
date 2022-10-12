@@ -62,7 +62,7 @@
 				<p><strong>관광목적</strong></p>
 				<label class="radio-inline"><input type="radio" name="genre" value="살거리">쇼핑</label>
 				<label class="radio-inline"><input type="radio" name="genre" value="먹거리">식사</label>
-				<label class="radio-inline"><input type="radio" name="genre" value="볼거리" >관광</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="볼거리">관광</label>
 				<label class="radio-inline"><input type="radio" name="genre" value="할거리">체험</label>
 			</div>
 

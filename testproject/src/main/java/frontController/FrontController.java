@@ -19,7 +19,11 @@ import com.smhrd.controller.GoJoinCon;
 import com.smhrd.controller.GoMainCon;
 import com.smhrd.controller.GoSurveyCon;
 import com.smhrd.controller.InsertCon;
+import com.smhrd.controller.JjimCon;
+import com.smhrd.controller.MYpageDeleteCon;
+//import com.smhrd.controller.JjimCon;
 import com.smhrd.controller.MypageCon;
+import com.smhrd.controller.RecommendCon;
 import com.smhrd.controller.b_UpdateCon;
 import com.smhrd.controller.joinCon;
 import com.smhrd.controller.logoutCon;
@@ -53,6 +57,9 @@ public class FrontController extends HttpServlet {
 		mappings.put("/b_update.do", new b_UpdateCon());
 		mappings.put("/DeleteCon.do", new DeleteCon());
 		mappings.put("/MypageCon.do",new MypageCon());
+		mappings.put("/recommend.do",new RecommendCon());
+		mappings.put("/jjim.do",new JjimCon());
+		mappings.put("/MYpageDeleteCon.do",new MYpageDeleteCon());
 		
 	}
 

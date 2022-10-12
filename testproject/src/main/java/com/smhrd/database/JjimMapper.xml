@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sql구문을 설정하는 파일 -->
+<!-- 문서 형식 정의(Document Type Definition, DTD)는 컴퓨터 용어로,
+     SGML 계열의 마크업 언어에서 문서 형식을 정의하는 것이다. -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : DAO 파일명을 원칙으로 작성한다. 
+     mapper 파일이 여러개였을 때 namespace는 절대 중복되면 안 된다.
+     table당 ___Mapper.xml 파일 하나!! -->
+<mapper namespace="com.smhrd.model.JjimDAO">
+
+	<insert id="Jjiminsert" parameterType="Jjim">
+	
+	insert into T_MEMBER_MYPAGE(MYPAGE_ID,SHOP_ID) values(#{mypage_id},#{shop_id})
+	
+	
+	</insert>
+	
+</mapper>  
